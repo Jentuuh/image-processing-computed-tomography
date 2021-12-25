@@ -1,13 +1,8 @@
-% img = imread("./data/Parallel Projection/SheppLoganPhantom.png");
-img = phantom(256);
-img = double(img)/255;
-
-Generate_Sinogram(img, 360);
-
 % Generates a sinogram given an input slice image and `ang_range`, the 
 % amountof projections that should be used. The offset between each 
 % projection is 1 degree. 
-function Generate_Sinogram(input_image, ang_range)
+function sinogram_construct(input_image, ang_range)
+    input_image = double(input_image)/255;
 
     % Calculate radon transform of the input image (slice)
     img_radon_transform = radon(input_image, 0:1:ang_range - 1);

@@ -1,12 +1,10 @@
-% Read in image and normalize
-img = imread("./data/Parallel Projection/sino_circle.png");
-img = double(img)/255;
-
-CT_slice(img);
-
 % Reconstructs the CT slice image using the Fourier Slice Theorem,
 % given a sinogram image (Nearest Neighbour Rounding version).
-function CT_slice(sinogram)
+function direct_fourier_reconstruct(img_file)
+
+    % Read in image and normalize
+    sinogram = imread(img_file);
+    sinogram = double(sinogram)/255;
 
     first_row = sinogram(1, :);
     first_col = sinogram(:, 1);

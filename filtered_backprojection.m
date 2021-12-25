@@ -1,11 +1,9 @@
-% Read in image and normalize
-img = imread("./data/Parallel Projection/SheppLoganPhantom.png");
-img = double(img)/255;
-CT_radon(img);
-
 % Reconstructs the CT slice image using Filtered Backprojection,
 % given a sinogram image.
-function CT_radon(sinogram)
+function filtered_backprojection(img_file)
+    % Read in image and normalize
+    sinogram = imread(img_file);
+    sinogram = double(sinogram)/255;
 
     first_row = sinogram(1, :);
     first_col = sinogram(:, 1);
