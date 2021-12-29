@@ -26,6 +26,9 @@ function direct_fourier_interpolated(img_file)
 
     % Result matrix stores the 2D FT (cartesian space)
     result_matrix = zeros(img_res, img_res);
+
+    ang_fraction = ang_range / size(sinogram, 1);
+
     
     % Here we'll store the X- and Y-coordinates that will be used for 
     % linear interpolation
@@ -68,7 +71,7 @@ function direct_fourier_interpolated(img_file)
                 dist_to_center = interp1([0, length(ft_line)], [-center_index, center_index], point);
                 
                 % Retrieve cartesian coordinates (since we know rho and theta)
-                [x,y] = pol2cart(deg2rad(line_index - 1), dist_to_center);
+                [x,y] = pol2cart(deg2rad((line_index - 1) * ang_fraction), dist_to_center);
                 
                 % Shift to [0 ; img_res] range
                 x = x + center_index;
@@ -79,7 +82,6 @@ function direct_fourier_interpolated(img_file)
                 x_coords((line_index - 1) * img_res + point) = x;
                 y_coords((line_index - 1) * img_res + point) = y;
                 complex_points((line_index - 1) * img_res + point) = ft_line(point);
-    
             end
         end
         % Interpolate on a grid that corresponds to the image resolution

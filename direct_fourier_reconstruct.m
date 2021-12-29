@@ -30,6 +30,7 @@ function direct_fourier_reconstruct(img_file)
     % Result matrix stores the 2D FT (cartesian space)
     result_matrix = zeros(img_res, img_res, img_dimensions);
 
+    ang_fraction = ang_range / size(sinogram, 1);
 
     % Read in ang_range lines from the sinogram
     for d = 1 : img_dimensions
@@ -56,7 +57,7 @@ function direct_fourier_reconstruct(img_file)
                 % dist_to_center = point - center_index;
                 dist_to_center = interp1([0, size(ft_line,2)], [-center_index, center_index], point);
     
-                [x,y] = pol2cart(deg2rad(line_index - 1), dist_to_center);
+                [x,y] = pol2cart(deg2rad((line_index - 1) * ang_fraction), dist_to_center);
     
                 % Transform to [0 ; img_res] range
                 x = x + center_index + 1;
