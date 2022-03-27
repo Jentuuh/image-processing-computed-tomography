@@ -11,9 +11,8 @@ A project for my Image Processing course. It involves image reconstruction from 
 `sinogram_construct(input_image, ang_range)`: Generates a sinogram given an input slice image. `input_image` represents the path to the input slice image. `ang_range` represents the amount of projections that should be used.
 
 # Results 
-![alt text](https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/witcher.png?raw=true)
-![alt text](https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/witcher_sin.png?raw=true)
-![alt text](https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/result.png?raw=true)
+![Original Image](https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/witcher.png?raw=true)
+![Reconstructed Image](https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/result.png?raw=true)
 
 # Running the programs
 The easiest way to run the program is by simply typing `PROGRAM_FILE_NAME(func_params...)` in the MATLAB command prompt.
