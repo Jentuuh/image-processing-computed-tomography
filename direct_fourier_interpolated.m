@@ -1,11 +1,11 @@
 % Reconstructs the CT slice image using the Fourier Slice Theorem,
 % given a sinogram image (Linear Interpolation version).
-function direct_fourier_interpolated(img_file)
+function direct_fourier_interpolated(img_file, ang_range)
 
     % Read in image and normalize
     sinogram = imread(img_file);
     sinogram = double(sinogram)/255;
-
+    
     first_row = sinogram(1, :);
     first_col = sinogram(:, 1);
     
@@ -14,15 +14,9 @@ function direct_fourier_interpolated(img_file)
         sinogram = pagetranspose(sinogram);
     end
     
-    % Find the resolution of the resulting image and angular range
+    % Find the resolution of the resulting image
     img_res = size(sinogram, 2);
     img_dimensions = size(sinogram, 3);
-
-    if size(sinogram, 1) >= 360
-        ang_range = 360;
-    else
-        ang_range = 180;
-    end
 
     % Result matrix stores the 2D FT (cartesian space)
     result_matrix = zeros(img_res, img_res);

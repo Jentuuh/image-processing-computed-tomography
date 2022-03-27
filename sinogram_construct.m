@@ -1,5 +1,5 @@
 % Generates a sinogram given an input slice image and `ang_range`, the 
-% amountof projections that should be used. The offset between each 
+% amount of projections that should be used. The offset between each 
 % projection is 1 degree. 
 function sinogram_construct(input_image, ang_range)
     img = imread(input_image);
@@ -17,5 +17,7 @@ function sinogram_construct(input_image, ang_range)
     
     % Show the resulting sinogram
     imshow(img_radon_transform);
+    imwrite(img_radon_transform, "./data/witcher_sin.png")
+
 end
 

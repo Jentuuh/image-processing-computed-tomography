@@ -1,6 +1,6 @@
 % Reconstructs the CT slice image using Filtered Backprojection,
 % given a sinogram image.
-function filtered_backprojection(img_file, filter)
+function filtered_backprojection(img_file, filter, ang_range)
 
     if filter ~= "gauss" && filter ~= "ramlak"
         disp("Unknown filter was used. Please try again with " + ...
@@ -20,14 +20,14 @@ function filtered_backprojection(img_file, filter)
         sinogram = pagetranspose(sinogram);
     end
     
-    % Find the resolution of the resulting image and angular range
+    % Find the resolution of the resulting image
     img_res = size(sinogram, 1);
 
-    if size(sinogram, 2) >= 360
-        ang_range = 360;
-    else
-        ang_range = 180;
-    end
+%     if size(sinogram, 2) >= 360
+%         ang_range = 360;
+%     else
+%         ang_range = 180;
+%     end
     
     result = zeros(img_res, img_res);
 

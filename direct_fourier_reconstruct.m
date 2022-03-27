@@ -1,6 +1,6 @@
 % Reconstructs the CT slice image using the Fourier Slice Theorem,
 % given a sinogram image (Nearest Neighbour Rounding version).
-function direct_fourier_reconstruct(img_file)
+function direct_fourier_reconstruct(img_file, ang_range)
 
     % Read in image and normalize
     sinogram = imread(img_file);
@@ -14,15 +14,15 @@ function direct_fourier_reconstruct(img_file)
         sinogram = pagetranspose(sinogram);
     end
     
-    % Find the resolution of the resulting image and angular range
+    % Find the resolution of the resulting image
     img_res = size(sinogram, 2);
     img_dimensions = size(sinogram, 3);
 
-    if size(sinogram, 1) >= 360
-        ang_range = 360;
-    else
-        ang_range = 180;
-    end
+%     if size(sinogram, 1) >= 360
+%         ang_range = 360;
+%     else
+%         ang_range = 180;
+%     end
 
     % Inter result matrix stores the 1D FTs
     inter_result_matrix = zeros(ang_range, img_res);
