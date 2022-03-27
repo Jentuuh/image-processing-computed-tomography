@@ -6,7 +6,7 @@ A project for my Image Processing course. It involves image reconstruction from 
 
 `direct_fourier_interpolated(img_file, ang_range)`: Reconstructs CT slice image via Fourier Slice Theorem using bilinear interpolation.
 
-`filtered_backprojection(img_file, filter, ang_range)`: Reconstructs CT slice image via Filtered Backprojection. `filter` represents the high-pass filter that is used in the algorithm. Should be equal to either `"gauss"` or `"ramlak"`.
+`filtered_backprojection(img_file, filter, ang_range)`: Reconstructs CT slice image via Filtered Backprojection. `filter` represents the high-pass filter that is used in the algorithm and should be equal to either `"gauss"` or `"ramlak"`.
 
 `sinogram_construct(input_image, ang_range)`: Generates a sinogram given an input slice image. `input_image` represents the path to the input slice image. `ang_range` represents the amount of projections that should be used.
 
