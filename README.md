@@ -15,7 +15,7 @@ A project for my Image Processing course. It involves image reconstruction from 
 The easiest way to run the program is by simply typing `PROGRAM_FILE_NAME(func_params...)` in the MATLAB command prompt.
 
 # Results 
-<img src="https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/witcher.png?raw=true" alt="Original Image" width="200"/>
-<img src="https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/result.png?raw=true" alt="Reconstructed Image" width="200"/>
+<img src="https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/witcher.png?raw=true" alt="Original Image" width="500"/>
+<img src="https://github.com/Jentuuh/image-processing-computed-tomography/blob/master/data/result.png?raw=true" alt="Reconstructed Image" width="500"/>
 
 
