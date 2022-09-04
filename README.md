@@ -1,5 +1,5 @@
 # Computed Tomography Reconstruction
-A project for my Image Processing course (2021-2022). It involves image reconstruction from a sinogram by making use of the Fourier Slice Theorem, Filtered Backprojection and Sinogram Generation.
+A project for my Image Processing course. It involves image reconstruction from a sinogram by making use of the Fourier Slice Theorem, Filtered Backprojection and Sinogram Generation.
 
 ## Summary
 * `direct_fourier_reconstruct(img_file, ang_range)`: Reconstructs CT slice image via Fourier Slice Theorem using nearest neighbour interpolation. `img_file`represents the path to the input sinogram. `ang_range` is the angular range (in degrees) that that the sinogram covers (either 180 or 360).
